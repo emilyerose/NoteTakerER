@@ -49,5 +49,20 @@ app.post('/notes', (req,res) => {
     }
 })
 
-
+app.delete('/notes', (req,res) => {
+    console.log(req.params)
+    fs.readFile('./db/db.json','utf-8',(err,data) => {
+        if(err) { console.error(err) }
+        else {
+            const id = req.params[0]
+            console.log(id)
+            // const noteToDelete = 
+            // notesArr.push(newNote)
+            // fs.writeFile('./db/db.json',JSON.stringify(notesArr,null,'\t'),(err) =>
+            // err ? console.error(err) : console.info(`\nData written to databse`))
+            // //return new note to client
+            // res.json(newNote);
+        }
+    })
+})
 module.exports= app;
